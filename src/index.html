@@ -5,23 +5,137 @@
         <meta charset="utf-8" />
         <link rel="stylesheet" href="./output.css" />
         <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                darkMode: "class",
+                theme: {
+                    extend: {
+                        colors: {
+                            lightblue: '#b7d4ea',
+                            darkblue: '#1e7cbd',
+                        },
+                        backgroundImage: {
+                            'hero-pattern': "url('../media/hero-section-light.png')",
+                        },
+                    },  
+                },
+            }
+        </script>
         <title>Accueil - Portfolio de Benjamin</title>
         <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"> -->
     </head>
     
-    <body class="bg-blue-200 p-0 m-0 font-sans">
-        <nav class="bg-white w-full h-20 fixed top-0 flex flex-row items-center px-10 justify-evenly">
-            <div class="cursor-pointer">
-                <img class="w-20" src="../media/Logo DB (light).png" alt="Logo Benjamin Diard">
+    <body class="bg-stone-100 dark:bg-neutral-700 p-0 m-0 font-sans">
+        
+<!-- ============================== NAV ============================== -->
+
+        <nav class="bg-stone-100 dark:bg-neutral-700 dark:text-stone-100 w-full h-20 fixed top-0 px-10 z-50 shadow-lg">
+            <div class="container flex flex-row h-20 items-center justify-around">
+                
+                <div class="flex flex-row items-center gap-2">
+                    <img class="w-16" src="../media/logo-light.png" alt="Benjamin Diard's logo">
+                    <p class="font-bold text-base text-neutral-800">Benjamin Diard</p>
+                </div>
+                
+                <ul class="flex flex-row font-bold text-base text-neutral-700 dark:text-stone-100 space-x-16">
+                    <li class="hover:text-sky-600 cursor-pointer transition">Home</li>
+                    <li class="hover:text-sky-600 cursor-pointer transition">Projects</li>
+                    <li class="hover:text-sky-600 cursor-pointer transition">Profile</li>
+                </ul>
+                
+                <div class="flex flex-row items-center cursor-pointer gap-7">
+                    <img class="w-7" src="../media/icon-dark-mode.png" alt="Dark mode icon">
+                    <button class="bg-sky-400 hover:bg-sky-700 transition rounded-xl font-bold text-stone-100 py-2 px-4" type="button">Contact</button>
+                </div>
+
+            
             </div>
-            <ul class="container flex flex-row font-bold text-base cursor-pointer justify-evenly">
-                <li>Accueil</li>
-                <li href="profile.html">Qui suis-je ?</li>
-                <li href="portfolio.html">Mes projets</li>
-            </ul>
-            <button class="bg-blue-900 rounded-lg text-white p-1" type="button">Contact</button>
         </nav>
+
+<!-- ============================== HERO SECTION ============================== -->
+
+        <div class="h-screen flex flex-row justify-center items-center bg-stone-100 text-neutral-700 dark:text-stone-100">
+            <div class="flex flex-col justify-start gap-7 mx-80">
+                <p class="text-5xl font-bold">Hello, my name is Benjamin <br> and I'm a <a class="text-sky-400">web developer</a> <br> with a solid UX background.</p>
+                <p class="text-xl font-semibold">Let's work together and deliver an <a class="text-amber-400">optimal experience</a> to your users!</p>
+                <div class="container flex flex-row justify-center mt-10 gap-14">
+                    <button class="bg-sky-400 hover:bg-sky-700 transition rounded-3xl font-bold text-stone-100 text-xl py-3 px-6 w-60" type="button">Explore my projects</button>
+                    <button class="bg-stone-100 hover:border-amber-700 transition rounded-3xl font-bold text-neutral-700 text-xl py-3 px-6 w-60 border-4 border-amber-400" type="button">More about me</button>
+                </div>
+            </div>
+        </div>
+
+<!-- ============================== PROFIL ============================== -->
+
+        <div class="flex flex-col mx-28 mb-28 gap-5">
+            
+            <h2 class="text-2xl font-bold">Who am I?</h2>
+            
+            <div class="grid grid-cols-3 grid-rows-1 gap-5">
+                <div class="flex flex-col bg-sky-200 text-neutral-700 rounded-xl p-5 gap-4">
+                    <h3 class="self-center text-xl font-bold">Education</h3>
+                    <p>I'm a student 3rd year in IT development at ETNA. I joined this school following a first master's degree in UX, and want to combine my skills in these two fields to become an outstanding developer.</p>
+                </div>
+                <div class="flex flex-col bg-sky-200 text-neutral-700 rounded-xl p-5 gap-4">
+                    <h3 class="self-center text-xl font-bold">Soft-skills</h3>
+                    <p>I'm organized, detail-oriented and adaptable to any situation. I'm a good listener as well and I love teamworking.</p>
+                </div>
+                <div class="flex flex-col bg-sky-200 text-neutral-700 rounded-xl p-5 gap-4">
+                    <h3 class="self-center text-xl font-bold">Hobbies</h3>
+                    <p>I'm very sociable and curious. I'm a huge comic-books reader and rap music fan. I also like to spend my free time on self-training in new technologies.</p>
+                </div>
+            </div>
+        
+        </div>
+
+<!-- ============================== PROJETS ============================== -->
+
+        <div class="flex flex-col mx-28 gap-5">
+            
+            <h2 class="text-2xl font-bold">My projects</h2>
+            
+            <div class="grid grid-cols-2 grid-rows-2 gap-5">
+                <div class="flex flex-col bg-sky-200 text-neutral-700 rounded-xl p-5 gap-4">
+                    <h3 class="text-xl font-bold">This portfolio</h3>
+                    <p>The portfolio you are currently exploring is my first non-academic project, which purpose is to <strong>discover my skills and projects as a developer</strong>.</p>
+                    <p class="text-lg font-bold">Stack :</p>
+                    <div class="flex flex-row flex-wrap gap-1">
+                        <p class="bg-neutral-700 rounded-3xl text-stone-100 w-fit py-1 px-3">Tailwind CSS</p>
+                        <p class="bg-neutral-700 rounded-3xl text-stone-100 w-fit py-1 px-3">HTML</p>
+                        <p class="bg-neutral-700 rounded-3xl text-stone-100 w-fit py-1 px-3">JavaScript</p>
+                    </div>
+                </div>
+                <div class="flex flex-col bg-sky-200 text-neutral-700 rounded-xl p-5 gap-4">
+                    <h3 class="text-xl font-bold">Pokémon Society</h3>
+                    <p>Academic project in which I worked on creating a <strong>REST API</strong> in TypeScript, interacting with a MySQL <strong>database</strong>.</p>
+                    <p class="text-lg font-bold">Stack :</p>
+                    <div class="flex flex-row flex-wrap gap-1">
+                        <p class="bg-neutral-700 rounded-3xl text-stone-100 w-fit py-1 px-3">TypeScript</p>
+                        <p class="bg-neutral-700 rounded-3xl text-stone-100 w-fit py-1 px-3">Express.js</p>
+                        <p class="bg-neutral-700 rounded-3xl text-stone-100 w-fit py-1 px-3">MySQL</p>
+                    </div>
+                </div>
+                <div class="flex flex-col bg-sky-200 text-neutral-700 rounded-xl p-5 gap-4">
+                    <h3 class="text-xl font-bold">Lee's Algorithm</h3>
+                    <p>Academic project in which I worked on <strong>Lee's algorithm</strong> in TypeScript to solve the <strong>shortest path problem</strong>.</p>
+                    <p class="text-lg font-bold">Stack :</p>
+                    <div class="flex flex-row flex-wrap gap-1">
+                        <p class="bg-neutral-700 rounded-3xl text-stone-100 w-fit py-1 px-3">TypeScript</p>
+                    </div>
+                </div>
+                <div class="flex flex-col bg-sky-200 text-neutral-700 rounded-xl p-5 gap-4">
+                    <h3 class="text-xl font-bold">Hyrule Castle</h3>
+                    <p>Academic project in which I worked on an <strong>interactive RPG</strong> in TypeScript (in the terminal), <strong>parsing data</strong> from JSON files.</p>
+                    <p class="text-lg font-bold">Stack :</p>
+                    <div class="flex flex-row flex-wrap gap-1">
+                        <p class="bg-neutral-700 rounded-3xl text-stone-100 w-fit py-1 px-3">TypeScript</p>
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+
     </body>
 </html>
